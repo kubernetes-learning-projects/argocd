@@ -33,19 +33,6 @@ spec:
         - name: java-app-config
           mountPath: "/opt/config"
         command: ["java", "-javaagent:/app/jmx.jar=9090:/app/config.yml", "-jar", "/app/java.jar", "--spring.config.location=/opt/config/application.properties", "--spring.profiles.active=mysql"]
-        readinessProbe:
-          httpGet:
-            path: /actuator/health
-            port: 8080
-          initialDelaySeconds: 10
-          periodSeconds: 5
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 20
-          periodSeconds: 10
-
 
       volumes:
       - name: java-app-config
