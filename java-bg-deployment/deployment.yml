@@ -11,7 +11,7 @@ spec:
   strategy:
     type: BlueGreen
     blueGreenStrategy:
-      activeService: java-app-service-active
+      activeService: java-app-service
       previewService: java-app-service-preview
       autoPromotionEnabled: true
   template:
