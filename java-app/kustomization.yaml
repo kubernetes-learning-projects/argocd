@@ -5,3 +5,6 @@ resources:
 - base/java.yml
 - base/secret.yml
 - base/configmap.yml
+
+patches:
+- patch.yaml
