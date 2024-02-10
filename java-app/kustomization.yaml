@@ -6,18 +6,11 @@ resources:
 - base/secret.yml
 - base/configmap.yml
 
-patchesStrategicMerge:
-  - patches/db-secret.yaml  # Assuming you have a patch file for injecting db credentials secrets
 
 commonLabels:
   app: java-app
 
 namespace: pet-clinic-app # Update based on your target namespace
-
-configMapGenerator:
-  - name: java-app-config
-    literals:
-      - MY_KEY=MY_VALUE  # Add your desired key-value pairs here
 
 replicas:
   - name: java-app
